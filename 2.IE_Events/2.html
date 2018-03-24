@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Универсальная обработка событий</title>
+
+    <script>
+        function addListenner(name, fn){
+
+        // В последних версиях IE (>=9) также поддерживается метод addEventListener
+        
+        function init() {
+            var e = document.getElementById("button");
+            if (e.addEventListener) e.addEventListener("click", handler, false);
+            if (e.attachEvent) e.attachEvent("onclick", handler);
+        }
+
+        function handler() {
+            alert("Hello world");
+        }
+    </script>
+
+</head>
+<body>
+    <input id="button" type="button" value="Кнопка" />
+</body>
+</html>
